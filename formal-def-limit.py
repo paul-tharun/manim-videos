@@ -9,7 +9,7 @@ def get_definition_text():
                         r"i.e $\lim _{x \rightarrow x_{0}} f(x)=L$ \\",
                         r"if for every $\varepsilon \textgreater 0 $ there exists a $\delta \textgreater 0$ such that for all x \\",
                         r"the following condition holds true \\" ,
-                        r"$0 \textless \left|x-4\right| \textgreater \delta \Longrightarrow|f(x)-L| \textgreater \varepsilon$"
+                        r"$0 \textless \left|x-4\right| \textless \delta \Longrightarrow|f(x)-L| \textless \varepsilon$"
                        )
 
 def get_custom_definition_text():
@@ -33,7 +33,7 @@ class IntroDefinitionText(Scene):
         title = TextMobject(r"The formal definition", "of a", "Limit")
         definition.set_color_by_tex_to_color_map({r"$f(x)$": YELLOW,
                                                   r"i.e $\lim _{x \rightarrow x_{0}} f(x)=L$ \\": PURPLE,
-                                                  r"$0 \textless \left|x-x_{0}\right| \textgreater \delta \Longrightarrow|f(x)-L| \textgreater \varepsilon$": PURPLE})
+                                                  r"$0 \textless \left|x-x_{0}\right| \textless \delta \Longrightarrow|f(x)-L| \textless \varepsilon$": PURPLE})
         title.shift(3 * UP)
         title.scale(1.5)
         title.set_color_by_tex_to_color_map({
@@ -84,10 +84,10 @@ def epsilon_explain():
                                      r"delta $\delta$": PURPLE})
     return a
 def conclusion():
-    return TextMobject(r"This can be tested by taking different values of delta and  \\seeing if an epsilon that satisfies the conditions can be found")
+    return TextMobject(r"This can be tested by taking different values of epsilon and  \\seeing if a delta that satisfies the conditions can be found")
 def final():
-    final = TextMobject(r"As for any value of", r"$\delta$", r"how ever close to zero an",
-                        r"$\varepsilon$", r"can be \\ found that satisfies the condition" ,
+    final = TextMobject(r"Since for any value of", r"$\varepsilon$", r"how ever close to zero a",
+                        r"$\delta$", r"can be \\ found that satisfies the condition" ,
                       r"Hence it can be said \\" ,
                       r"$\lim _{x \rightarrow {4}} x+1=5$")
     final.set_color_by_tex_to_color_map({r"$\lim _{x \rightarrow {4}} x+1=5$": PURPLE,
@@ -97,7 +97,7 @@ def final():
     final.shift(3.3*RIGHT+3*UP)
     return final
 def delta_val(x=1):
-    delt = TextMobject(r"The value of $\delta$ is" , x)
+    delt = TextMobject(r"The value of $\varepsilon$ is" , x)
     delt.scale(0.6)
     delt.shift(3.3*RIGHT+3*UP)
     return delt
@@ -260,3 +260,4 @@ class PlotFunctions(GraphScene):
 
     def func_to_graph(self,x):
         return x +1
+
